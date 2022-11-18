@@ -1,0 +1,9 @@
+# Copyright Chris Larsen, 2022
+for i in range(0b1_0000000000, 0b10_0000000000, 8):
+  s = "        "
+  for j in range(0, 8):
+    h = hex(0b1_0000000000_00000000 // (i+j) & 0x7F)
+    if len(h) == 3:
+      h = h[:2] + "0" + h[2:]
+    s = s + h + ", "
+  print(s[:-1])
